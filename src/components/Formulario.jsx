@@ -81,19 +81,19 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
 
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
-      <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
+      <h2 className="font-black text-3xl text-center dark:text-white">Seguimiento Pacientes</h2>
 
-      <p className="text-lg mt-5 text-center mb-10">
+      <p className="text-lg mt-5 text-center mb-10 dark:text-white">
         Añade Pacientes y {''}
         <span className="text-indigo-600 font-bold text-lg">Administralos</span>
       </p>
 
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 dark:bg-slate-600">
 
         { error && <Error><p>Deben llenarse todos los campos...</p></Error>}
          
         <div className="mb-5">
-          <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">
+          <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold dark:text-white">
             Nombre Mascota
             </label>
 
@@ -101,25 +101,25 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
             id="mascota"
             type="text" 
             placeholder="Nombre de la Mascota" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
             value={nombre}
             onChange={ (e) => setNombre(e.target.value)}
             />
         </div>
 
         <div className="mb-5">
-          <label htmlFor="especie" className="block text-gray-700 uppercase font-bold">Especie</label>
-          <select name="select" id="especie" required className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          <label htmlFor="especie" className="block text-gray-700 uppercase font-bold dark:text-white">Especie</label>
+          <select name="select" id="especie" required className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
           value={especie}
           onChange={ (e) => setEspecie(e.target.value)}>
-            <option value="Perro (Canis)">Perro (Canis)</option>
-            <option value="Gato (Felix)">Gato (Felix)</option>
-            <option value="Otro">Otro</option>
+            <option value="Perro (Canis)" className="dark:text-white">Perro (Canis)</option>
+            <option value="Gato (Felix)" className="dark:text-white">Gato (Felix)</option>
+            <option value="Otro" className="dark:text-white">Otro</option>
           </select>
         </div>
 
         <div className="mb-5">
-          <label htmlFor="propietartio" className="block text-gray-700 uppercase font-bold">
+          <label htmlFor="propietartio" className="block text-gray-700 uppercase font-bold dark:text-white">
             Nombre del propietario
             </label>
 
@@ -127,14 +127,14 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
             id="propietartio"
             type="text" 
             placeholder="Nombre del Propietario" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
             value={propietario}
             onChange={ (e) => setPropietario(e.target.value)}
             />
         </div>
 
         <div className="mb-5">
-          <label htmlFor="e-mail" className="block text-gray-700 uppercase font-bold">
+          <label htmlFor="e-mail" className="block text-gray-700 uppercase font-bold dark:text-white">
             e-mail
             </label>
 
@@ -142,33 +142,33 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
             id="e-mail"
             type="text" 
             placeholder="e-mail del Propietario" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
             value={email}
             onChange={ (e) => setEmail(e.target.value)}
             />
         </div>
 
         <div className="mb-5">
-          <label htmlFor="alta" className="block text-gray-700 uppercase font-bold">
+          <label htmlFor="alta" className="block text-gray-700 uppercase font-bold dark:text-white">
             Alta
             </label>
 
           <input 
             id="alta"
             type="date" 
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
             value={alta}
             onChange={ (e) => setAlta(e.target.value)}
             />
         </div>
 
         <div className="mb-5">
-          <label htmlFor="sintomas" className="block text-gray-700 uppercase font-bold">
+          <label htmlFor="sintomas" className="block text-gray-700 uppercase font-bold dark:text-white">
             Sintomas
             </label>
             <textarea 
             id="sintomas"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
             placeholder="Breve descripción de los sintomas"
             value={sintomas}
             onChange={ (e) => setSintomas(e.target.value)}
