@@ -7,6 +7,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
   const [email, setEmail] = useState("");
   const [alta, setAlta] = useState("");
   const [sintomas, setSintomas] = useState("");
+  const [especie, setEspecie] = useState("")
 
   const [error, setError] = useState(false);
 
@@ -31,7 +32,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
     e.preventDefault()
 
     //Validanción del formulario
-    if([ nombre, propietario, email, alta, sintomas ].includes('')) {
+    if([ nombre, propietario, email, alta, sintomas, especie ].includes('')) {
       console.log('Hay al menos un campo vacio')
 
       setError(true)
@@ -44,6 +45,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
     //Almacenando infro en un objeto
     const objetoPaciente = {
       nombre, 
+      especie,
       propietario, 
       email, 
       alta, 
@@ -106,6 +108,17 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
         </div>
 
         <div className="mb-5">
+          <label htmlFor="especie" className="block text-gray-700 uppercase font-bold">Especie</label>
+          <select name="select" id="especie" required className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          value={especie}
+          onChange={ (e) => setEspecie(e.target.value)}>
+            <option value="Perro (Canis)">Perro (Canis)</option>
+            <option value="Gato (Felix)">Gato (Felix)</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div className="mb-5">
           <label htmlFor="propietartio" className="block text-gray-700 uppercase font-bold">
             Nombre del propietario
             </label>
@@ -164,7 +177,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
 
         <input type="submit"
          id=""  
-         className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-all"
+         className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 transition-all rounded"
          value={paciente.id ? 'Editar paciente' : 'Agregar paciente'}
          />
       </form>

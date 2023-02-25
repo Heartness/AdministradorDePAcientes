@@ -1,6 +1,6 @@
 function Paciente({paciente, setPaciente, eliminarPaciente}) {
 
-  const {nombre, propietario, email, alta, sintomas, id} = paciente
+  const {nombre, especie, propietario, email, alta, sintomas, id} = paciente
 
   const handleEliminar = () => {
     const respuesta = confirm('¿Deseas eliminar este paciente?')
@@ -14,6 +14,10 @@ function Paciente({paciente, setPaciente, eliminarPaciente}) {
     <div className="mx-5 my-5 bg-white shadow-md px-5 py-10 rounded-xl">
         <p className="font-bold mb-3 text-gray-700 uppercase">Nombre: {''}
           <span className="font-normal normal-case">{nombre}</span>
+        </p>
+
+        <p className="font-bold mb-3 text-gray-700 uppercase">Especie: {''}
+          <span className="font-normal normal-case">{especie}</span>
         </p>
 
         <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: {''}
