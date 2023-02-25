@@ -79,7 +79,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
 
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
-      <h2 className="font-black text-3xl text-center">Segumiento Pacientes</h2>
+      <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
 
       <p className="text-lg mt-5 text-center mb-10">
         Añade Pacientes y {''}
@@ -88,7 +88,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
 
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
 
-        { error && <Error><p>eben llenarse todos los campos...</p></Error>}
+        { error && <Error><p>Deben llenarse todos los campos...</p></Error>}
          
         <div className="mb-5">
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">
