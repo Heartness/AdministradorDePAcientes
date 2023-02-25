@@ -14,6 +14,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
   useEffect(() => {
     if( Object.keys(paciente).length > 0){
       setNombre(paciente.nombre)
+      setEspecie(paciente.especie)
       setPropietario(paciente.propietario)
       setEmail(paciente.email)
       setAlta(paciente.alta)
@@ -73,6 +74,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
     //Reiniciar el Form
 
     setNombre('')
+    setEspecie('')
     setPropietario('')
     setEmail('')
     setAlta('')
@@ -112,6 +114,7 @@ function Formulario({ pacientes, setPacientes, paciente, setPaciente }) {
           <select name="select" id="especie" required className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md dark:bg-slate-500 dark:border-gray-600 dark:text-white"
           value={especie}
           onChange={ (e) => setEspecie(e.target.value)}>
+            <option value="" className="dark:text-white">-</option>
             <option value="Perro (Canis)" className="dark:text-white">Perro (Canis)</option>
             <option value="Gato (Felix)" className="dark:text-white">Gato (Felix)</option>
             <option value="Otro" className="dark:text-white">Otro</option>
